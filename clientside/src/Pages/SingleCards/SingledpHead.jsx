@@ -75,7 +75,7 @@ const SingledpHead = () => {
           <Card.Title className="text-truncate">{data.name}</Card.Title>
           <Card.Text className="text-success">{data.email}</Card.Text>
           <Card.Text className="text-muted">Age: {data.age}</Card.Text>
-          <Card.Text className="text-warning">Department: <Button variant="link" onClick={() => navigate(`/SingleDepartment/${departmentLink}`)}>{data.department}</Button></Card.Text>
+          <Card.Text className="text-warning">Department: <Button variant="link" style={{textDecoration:'none'}} onClick={() => navigate(`/SingleDepartment/${departmentLink}`)}>{data.department}</Button></Card.Text>
           <Card.Text className="card-description">{data.description}</Card.Text>
         </Card.Body>
         <div className='d-flex gap-2 justify-content-center align-items-center'>
