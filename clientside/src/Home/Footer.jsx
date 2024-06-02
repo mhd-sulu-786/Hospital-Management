@@ -36,16 +36,16 @@ const Footer = ({ setActive }) => {
             <Typography variant="h6" gutterBottom>
               Quick buttons
             </Typography>
-            <button onClick={() => setActive('Home')} color="inherit" variant="body1" sx={{ display: 'block', mb: 1 }}>
+            <button className='btn btn-primary me-2' onClick={() => setActive('Home')} color="inherit" variant="body1" sx={{ display: 'block', mb: 1 }}>
               Home
             </button>
-            <button onClick={() => setActive('Employes')} color="inherit" variant="body1" sx={{ display: 'block', mb: 1 }}>
+            <button className='btn btn-primary me-2' onClick={() => setActive('Employes')} color="inherit" variant="body1" sx={{ display: 'block', mb: 1 }}>
               Employees
             </button>
-            <button onClick={() => setActive('Department')} color="inherit" variant="body1" sx={{ display: 'block', mb: 1 }}>
+            <button className='btn btn-primary me-2' onClick={() => setActive('Department')} color="inherit" variant="body1" sx={{ display: 'block', mb: 1 }}>
               Departments
             </button>
-            <button onClick={() => setActive('DepartmentHead')} color="inherit" variant="body1" sx={{ display: 'block', mb: 1 }}>
+            <button className='btn btn-primary me-2 my-2' onClick={() => setActive('DepartmentHead')} color="inherit" variant="body1" sx={{ display: 'block', mb: 1 }}>
               Department Heads
             </button>
           </Grid>

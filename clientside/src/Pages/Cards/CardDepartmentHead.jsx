@@ -50,7 +50,7 @@ const [departmentLink,setDepartment]=useState('');
     fetchDepartment();
   }, [department]);
   return (
-    <Col onClick={()=>navigate(`/SingledpHead/${_id}`)} key={_id} md={3} sm={6} xs={12} xl={2} className="mb-4">
+    <Col onClick={()=>navigate(`/SingledpHead/${_id}`)} key={_id} md={3} sm={6} xs={12} xl={2} className="mb-4 hover-card">
       <Card className="h-100 bg-white p-2">
         <Card.Img variant="top" src={`http://localhost:8000/Image/${image}`} alt={name} className="card-img-top-fixed" />
         <Card.Body className="d-flex flex-column">

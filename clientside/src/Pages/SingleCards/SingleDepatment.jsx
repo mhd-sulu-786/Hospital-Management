@@ -42,7 +42,7 @@ const SingleDepartment = () => {
   };
 
   return (
-    <Container key={data._id} md={4} sm={8} xs={12} xl={3} className="mb-4 d-flex flex-column justify-content-center align-items-center">
+    <Container key={data._id} md={4} sm={8} xs={12} xl={3} className="mb-4 d-flex flex-column justify-content-center align-items-center hover-card">
       <Button onClick={() => navigate('/')}>Back Home</Button>
       <Card className="h-100 bg-white p-2">
         <Card.Img variant="top" src={`http://localhost:8000/Image/${data.image}`} alt={data.name} className="card-img-top-fixed" />

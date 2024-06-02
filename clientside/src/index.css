@@ -55,3 +55,6 @@ code {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.hover-card{
+  cursor: pointer;
+}
