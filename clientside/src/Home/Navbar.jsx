@@ -40,10 +40,10 @@ function Navbar({ setActive }) {
   };
 
   return (
-    <AppBar position="sticky">
-      <Container maxWidth="xl">
+    <AppBar className="bg-primary " position="sticky">
+      <Container maxWidth="xl" >
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1,color:'black' }} />
           <Typography
             variant="h6"
             noWrap
@@ -52,10 +52,10 @@ function Navbar({ setActive }) {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              fontFamily: 'initial',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: 'black',
               textDecoration: 'none',
               cursor: 'pointer'
             }}
@@ -63,7 +63,7 @@ function Navbar({ setActive }) {
             Hospital
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box  sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -75,8 +75,10 @@ function Navbar({ setActive }) {
               <MenuIcon />
             </IconButton>
             <Menu
+            
               id="menu-appbar"
               anchorEl={anchorElNav}
+              
               anchorOrigin={{
                 vertical: 'bottom',
                 horizontal: 'left',
@@ -89,16 +91,19 @@ function Navbar({ setActive }) {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: 'block', md: 'none'},
               }}
+          
+            
             >
               {pages.map((page) => (
                 <MenuItem key={page.name} onClick={() => { handileNav(page.link); handleCloseNavMenu(); }}>
-                  <Typography textAlign="center">{page.icon}{page.name}</Typography>
+                  <Typography className='text-secondary ' style={{fontFamily:'initial' }} textAlign="center">{page.icon}{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
+          
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
@@ -119,12 +124,14 @@ function Navbar({ setActive }) {
           >
             Hospital
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' }, }} >
             {pages.map((page) => (
               <Button
+               className='col text-dark'
+               
                 key={page.name}
                 onClick={() => { handileNav(page.link); handleCloseNavMenu(); }}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block',fontFamily:'initial' }}
               >
                 {page.icon}{page.name}
               </Button>

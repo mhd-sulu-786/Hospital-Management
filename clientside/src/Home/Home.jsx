@@ -6,13 +6,13 @@ import './home.css'
 const Home = () => {
   const [showinfo,setinfo]=useState(false);
   return (
-    <Container fluid style={{ padding: '50px 0', textAlign: 'center' }}>
+    <Container fluid style={{ padding: '30px 0', textAlign: 'center' }}>
       <Row className="justify-content-center">
         <Col md={8}>
-          <Typography variant="h3" component="h1" gutterBottom>
+          <Typography variant="h3" component="h1" style={{fontFamily:'serif'}} gutterBottom>
             Welcome to Our Hospital
           </Typography>
-          <Typography variant="h5" component="h2" gutterBottom>
+          <Typography variant="h5" component="h2" style={{fontFamily:'serif'}} gutterBottom>
             Your Health, Our Priority
           </Typography>
           <Card sx={{ maxWidth: 600, margin: '20px auto', boxShadow: 3 }}>
@@ -24,7 +24,7 @@ const Home = () => {
               title="Hospital"
             />
             <CardContent>
-              <Typography variant="body1" color="textSecondary" component="p">
+              <Typography variant="body1" color="textSecondary" style={{fontFamily:'serif'}} component="p">
                 Our hospital offers state-of-the-art facilities and compassionate care to ensure the best outcomes for our patients.
               </Typography>
             </CardContent>
@@ -47,10 +47,10 @@ const Home = () => {
                   boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                 }}
               >
-                <Typography variant="h6" component="h3" gutterBottom>
+                <Typography variant="h6" component="h3" style={{fontFamily:'initial'}} gutterBottom>
                   The Importance of Health
                 </Typography>
-                <Typography variant="body1" color="textSecondary" component="p">
+                <Typography variant="body1" style={{fontFamily:'serif'}} color="textSecondary" component="p">
                   Maintaining good health is crucial for a fulfilling life. Our hospital is dedicated to
                   providing top-notch medical services and fostering a healthy community. Regular check-ups,
                   a balanced diet, and an active lifestyle are essential components of good health.

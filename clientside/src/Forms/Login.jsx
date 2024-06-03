@@ -43,13 +43,14 @@ function Login() {
 
     return (
         <Container
-            className="d-flex justify-content-center align-items-center text-center flex-column my-5 p-5 col-md-6"
+            className="d-flex justify-content-center align-items-center text-center flex-column my-5 p-5 col-md-7"
             style={{
                 backgroundImage: 'url(https://patienttoolbox.cchfreedom.org/files/images/In%20the%20Hospital%20-%20Registration.jpg)',
-                borderRadius: '10px',
+                borderRadius: '6px',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 color: '#0cb7e6',
+                opacity:'5'
             }}
         >
             <h1>Login</h1>
@@ -79,8 +80,8 @@ function Login() {
                         {errors.password}
                     </Form.Control.Feedback>
                 </Form.Group>
-                <a className="bg-white px-2" href="/register">I want to create a new account?</a>
-                <Button type="button" className="btn btn-primary mt-3" onClick={submitHandle}>
+                <a className=" text-primary px-2" style={{textDecoration:'none',opacity:'1',fontWeight:'600'}} href="/register">I want to create a new account?</a>
+                <Button type="button" className="btn btn-primary mt-3 px-4" onClick={submitHandle}>
                     Login
                 </Button>
             </Form>

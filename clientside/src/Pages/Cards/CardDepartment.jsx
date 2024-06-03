@@ -20,8 +20,9 @@ const navigate =useNavigate();
 
   return (
     <Col onClick={()=>navigate(`/SingleDepartment/${_id}`)} key={_id} md={3} sm={6} xs={12} xl={2} className="mb-4 d-flex hover-card" >
-      <Card className="h-100 w-100 bg-white p-2 card-fixed-height">
+      <Card className="h-100 w-100 bg-info p-2 card-fixed-height"  style={{fontFamily:'serif'}} >
         <Card.Img
+        style={{borderRadius:'10px'}}
           variant="top"
           src={`http://localhost:8000/Image/${image}`}
           alt={name}
@@ -34,8 +35,8 @@ const navigate =useNavigate();
           <Card.Text className="card-description text-truncate">{description}</Card.Text>
         </Card.Body>
         <div className='d-flex gap-2 justify-content-center align-items-center'>
-          <Button className='btn-warning' href={'/EdithDepartment/' + _id}>Edit</Button>
-          <Button className='btn-danger' onClick={() => deleteDepartment(_id)}>Delete</Button>
+          <Button className='btn-warning col text-dark' href={'/EdithDepartment/' + _id}>Edit</Button>
+          <Button className='btn-danger col text-dark' onClick={() => deleteDepartment(_id)}>Delete</Button>
         </div>
       </Card>
     </Col>

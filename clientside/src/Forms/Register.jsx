@@ -44,7 +44,7 @@ function Register() {
     };
 
     return (
-        <Container className="d-flex justify-content-center align-items-center text-center flex-column my-5 p-5 col-md-6"
+        <Container className="d-flex justify-content-center align-items-center text-center flex-column my-5 p-5 col-md-7"
             style={{
                 backgroundImage: 'url(https://patienttoolbox.cchfreedom.org/files/images/In%20the%20Hospital%20-%20Registration.jpg)',
                 borderRadius: '10px',
@@ -92,7 +92,7 @@ function Register() {
                         {errors.password}
                     </Form.Control.Feedback>
                 </Form.Group>
-                <a className='bg-white px-2 ' href="/login"> Already i have a account?</a>
+                <a className='text-primary  px-2 ' style={{textDecoration:'none',opacity:'1',fontWeight:'600'}} href="/login"> Already i have a account?</a>
 
                 <Button type="button" className="btn btn-primary mt-3" onClick={submitHandle}>
                     Register

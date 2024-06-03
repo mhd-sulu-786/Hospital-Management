@@ -9,7 +9,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 const Footer = ({ setActive }) => {
   return (
-    <Box sx={{ bgcolor: 'primary.dark', color: 'white', py: 6 }}>
+    <Box sx={{ bgcolor: 'skyblue',fontFamily:'initial' , py: 6 }} className='text-dark'>
       <Container maxWidth="lg">
         <Grid container spacing={4}>
           <Grid item xs={12} sm={4}>
@@ -54,13 +54,13 @@ const Footer = ({ setActive }) => {
               Follow Us
             </Typography>
             <Box sx={{ display: 'flex', mt: 1 }}>
-              <IconButton href="https://www.facebook.com/muhammadsulaimant.kongad" target="_blank" sx={{ color: 'white' }}>
+              <IconButton href="https://www.facebook.com/muhammadsulaimant.kongad" target="_blank" sx={{ color: 'blue' }}>
                 <FacebookIcon />
               </IconButton>
-              <IconButton href="https://x.com/Mhd_sulu_786" target="_blank" sx={{ color: 'white' }}>
+              <IconButton href="https://x.com/Mhd_sulu_786" target="_blank" sx={{ color: 'blue' }}>
                 <TwitterIcon />
               </IconButton>
-              <IconButton href="https://www.linkedin.com/in/muhammad-sulaiman-t-6b6141245/" target="_blank" sx={{ color: 'white' }}>
+              <IconButton href="https://www.linkedin.com/in/muhammad-sulaiman-t-6b6141245/" target="_blank" sx={{ color: 'blue' }}>
                 <LinkedInIcon />
               </IconButton>
             </Box>

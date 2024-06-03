@@ -51,18 +51,19 @@ const [departmentLink,setDepartment]=useState('');
   }, [department]);
   return (
     <Col onClick={()=>navigate(`/SingledpHead/${_id}`)} key={_id} md={3} sm={6} xs={12} xl={2} className="mb-4 hover-card">
-      <Card className="h-100 bg-white p-2">
-        <Card.Img variant="top" src={`http://localhost:8000/Image/${image}`} alt={name} className="card-img-top-fixed" />
+      <Card className="h-100 p-2 bg-dark border border-2 border-secondary text-info p-2"  style={{fontFamily:'initial'}}>
+        <Card.Img variant="top" src={`http://localhost:8000/Image/${image}`} style={{borderRadius:'10px'}} alt={name} className="card-img-top-fixed" />
         <Card.Body className="d-flex flex-column">
           <Card.Title className="text-truncate">{name}</Card.Title>
-          <Card.Text className="text-success">Email: {email}</Card.Text>
-          <Card.Text className="text-muted">Age: {age}</Card.Text>
-          <Card.Text className="text-warning">Department: <a href={`/SingleDepartment/${departmentLink}`} style={{ textDecoration: 'none' }}>{department}</a></Card.Text>
+          <Card.Text className="text-info txt-muted">Age: {age}</Card.Text>
+
+          <Card.Text className="text-primary"> {email}</Card.Text>
+          <Card.Text className="text-info">Department: <a href={`/SingleDepartment/${departmentLink}`} style={{ textDecoration: 'none' }}>{department}</a></Card.Text>
           <Card.Text className="card-description">{description}</Card.Text>
         </Card.Body>
         <div className='d-flex gap-2 justfy-content-center align-items-center'>
-          <Button className='btn-warning' href={'/EdithDepartmentHead/' + _id}>Edit</Button>
-          <Button className='btn-danger' onClick={() => DeleteDepartmentHead(_id)}>Delete</Button>
+          <Button className='btn-warning col text-dark' href={'/EdithDepartmentHead/' + _id}>Edit</Button>
+          <Button className='btn-danger col text-dark' onClick={() => DeleteDepartmentHead(_id)}>Delete</Button>
         </div>
       </Card>
     </Col>

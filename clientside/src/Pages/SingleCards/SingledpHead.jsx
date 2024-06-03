@@ -1,3 +1,4 @@
+import Home from '@mui/icons-material/Home';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Card, Button, Container } from 'react-bootstrap';
@@ -67,22 +68,24 @@ const SingledpHead = () => {
   };
 
   return (
-    <Container key={data._id} md={6} sm={8} xs={12} xl={4} className="mb-4 d-flex flex-column justify-content-center align-items-center hover-card">
-      <Button className='' onClick={() => navigate('/')}>Back Home</Button>
-      <Card className="h-100 bg-white p-2">
-        <Card.Img variant="top" src={`http://localhost:8000/Image/${data.image}`} alt={data.name} className="card-img-top-fixed" />
+    <Container fluid key={data._id} md={6} sm={8} xs={12} xl={4} className='w-100 p-0 m-0 bg-dark d-flex flex-column align-items-start justfy-content-center' style={{height:'100vh'}}>
+      <Button className='' onClick={() => navigate('/')}><Home/>Home</Button>
+      <Container className="mb-4 d-flex flex-column justify-content-center align-items-center hover-card">
+      <Card className="h-100 bg-info p-2 border border-2 border-secondary" style={{fontFamily:'initial'}}>
+        <Card.Img variant="top" src={`http://localhost:8000/Image/${data.image}`} style={{borderRadius:'5px'}} alt={data.name} className="card-img-top-fixed w-100 m-0 p-0" />
         <Card.Body className="d-flex flex-column">
           <Card.Title className="text-truncate">{data.name}</Card.Title>
-          <Card.Text className="text-success">{data.email}</Card.Text>
           <Card.Text className="text-muted">Age: {data.age}</Card.Text>
-          <Card.Text className="text-warning">Department: <Button variant="link" style={{textDecoration:'none'}} onClick={() => navigate(`/SingleDepartment/${departmentLink}`)}>{data.department}</Button></Card.Text>
-          <Card.Text className="card-description">{data.description}</Card.Text>
+          <Card.Text className="text-primary">{data.email}</Card.Text>
+          <Card.Text className="text-dark">Department: <Button variant="link" style={{textDecoration:'none'}} onClick={() => navigate(`/SingleDepartment/${departmentLink}`)}>{data.department}</Button></Card.Text>
+          <Card.Text className="card-description text-muted">{data.description}</Card.Text>
         </Card.Body>
         <div className='d-flex gap-2 justify-content-center align-items-center'>
-          <Button className='btn-warning' onClick={() => navigate(`/EditEmploy/${data._id}`)}>Edit</Button>
-          <Button onClick={() => deleteDepartmentHead(data._id)} className='btn-danger'>Delete</Button>
+          <Button className='btn-warning col text-dark' onClick={() => navigate(`/EditEmploy/${data._id}`)}>Edit</Button>
+          <Button onClick={() => deleteDepartmentHead(data._id)} className='btn-danger col text-dark'>Delete</Button>
         </div>
       </Card>
+    </Container>
     </Container>
   );
 };

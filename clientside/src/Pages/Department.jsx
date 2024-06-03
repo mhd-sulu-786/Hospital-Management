@@ -40,7 +40,7 @@ const Departments = ({setActive}) => {
   return (
     <Container fluid className='bg-dark'>
       <Row className="d-flex gap-2 justify-content-around align-items-center">
-        <Button className='w-100 m-0'onClick={()=>setActive('addDepartment')}><AddCardIcon /> Add Department</Button>
+        <Button className='w-100 m-0'  style={{fontFamily:'initial'}} onClick={()=>setActive('addDepartment')}><AddCardIcon /> Add Department</Button>
         {departments.map((dept) => (
           <CardDepartment key={dept.id} {...dept} setActive={setActive} type="department" />
         ))}

@@ -41,7 +41,7 @@ const Employes = ({setActive}) => {
     <Container fluid className='bg-dark'>
 
       <Row className="d-flex gap-2 justify-content-around align-items-center">
-        <Button className='w-100 m-0' onClick={()=>setActive('addEmploy')} ><PersonAddIcon />  Add Employ</Button>
+        <Button className='w-100 m-0' style={{fontFamily:'initial'}} onClick={()=>setActive('addEmploy')} ><PersonAddIcon />  Add Employ</Button>
         {employ.map((emp) => (
           <Card key={emp.id} {...emp} setActive={setActive} type="normal" />
         ))}

@@ -53,20 +53,21 @@ const CardEmploy = ({ _id, name, email, age, department, report, description, im
   }, [department, report]);
 
   return (
-    <Col onClick={() => navigate(`/SingleEmploy/${_id}`)}  key={_id} md={3} sm={6} xs={12} xl={2} className="mb-4 hover-card">
-      <Card  className="h-100 bg-white p-2">
-        <Card.Img variant="top" src={`http://localhost:8000/Image/${image}`} alt={name} className="card-img-top-fixed" />
+    <Col onClick={() => navigate(`/SingleEmploy/${_id}`)}  key={_id} md={4} sm={6} xs={12} xl={2} className="mb-4 hover-card">
+      <Card  className="h-100 w-100 p-2" style={{background:'darkblue',color:'whitesmoke'}}>
+        <Card.Img variant="top" src={`http://localhost:8000/Image/${image}`} style={{borderRadius:'10px',fontFamily:'monospace'}} alt={name} className="card-img-top-fixed" />
         <Card.Body className="d-flex flex-column">
-          <Card.Title className="text-truncate">{name}</Card.Title>
-          <Card.Text className="text-success">{email}</Card.Text>
-          <Card.Text className="text-muted">Age: {age}</Card.Text>
-          <Card.Text className="text-warning">Department: <a href={`/SingleDepartment/${DepartmentLink}`} style={{ textDecoration: 'none' }}>{department}</a></Card.Text>
-          <Card.Text className="text-warning">Report to: <a href={`/SingledpHead/${ReportLink}`} style={{ textDecoration: 'none' }}>{report}</a> </Card.Text>
-          <Card.Text className="card-description">{description}</Card.Text>
+          <Card.Title className="text-truncate" style={{fontFamily:'initial'}}>{name}</Card.Title>
+          <Card.Text className="text-truncate"  style={{fontFamily:'initial'}}>Age: {age}</Card.Text>
+          <Card.Text className="text-primary"  style={{fontFamily:'initial'}}>{email}</Card.Text>
+          
+          <Card.Text className="text-truncate"  style={{fontFamily:'initial'}}>Department: <a href={`/SingleDepartment/${DepartmentLink}`} style={{ textDecoration: 'none' }}>{department}</a></Card.Text>
+          <Card.Text className="text-truncate" style={{fontFamily:'initial'}}>Report to: <a href={`/SingledpHead/${ReportLink}`} style={{ textDecoration: 'none' }}>{report}</a> </Card.Text>
+          <Card.Text className="card-description text-muted" style={{fontFamily:'initial'}}>{description}</Card.Text>
         </Card.Body>
-        <div className='d-flex gap-2 justify-content-center align-items-center'>
-          <Button className='btn-warning' href={`/EdithEmploy/${_id}`}>Edit</Button>
-          <Button onClick={() => DeleteEmploy(_id)} className='btn-danger'>Delete</Button>
+        <div className='d-flex gap-2 justify-content-center align-items-center' style={{fontFamily:'monospace'}}>
+          <Button className='btn-warning text-dark col' href={`/EdithEmploy/${_id}`}>Edit</Button>
+          <Button onClick={() => DeleteEmploy(_id)} className='btn-danger col text-dark'>Delete</Button>
         </div>
       </Card>
     </Col>

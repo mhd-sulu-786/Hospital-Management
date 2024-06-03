@@ -40,7 +40,7 @@ const DepartmentHeads = ({setActive}) => {
   return (
     <Container fluid className='bg-dark'>
       <Row className="d-flex gap-2 justify-content-around align-items-center">
-        <Button className='w-100 m-0' onClick={()=>setActive('addDepartmentHead')} ><PersonAddIcon />  Add Department Head</Button>
+        <Button className='w-100 m-0'style={{fontFamily:'initial'}} onClick={()=>setActive('addDepartmentHead')} ><PersonAddIcon />  Add Department Head</Button>
         {departmentHeads.map((head) => (
           <CardDepartmentHead key={head.id} {...head} setActive={setActive}  type="departmentHead" />
         ))}
