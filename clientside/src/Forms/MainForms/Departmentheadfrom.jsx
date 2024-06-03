@@ -19,7 +19,7 @@ const DepartmentHeadForm = ({setActive}) => {
         // Fetch departments data from the API
         const fetchDepartments = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/Department/departments');
+                const response = await axios.get('https://hospital-management-server-g7db.onrender.com/Department/departments');
                 setDepartments(response.data);
             } catch (error) {
                 console.error('Error fetching departments:', error);
@@ -67,7 +67,7 @@ const DepartmentHeadForm = ({setActive}) => {
             formDataToSubmit.append('description', formData.description);
 
             try {
-               await axios.post('http://localhost:8000/DepartmentHead/adddepartmenthead', formDataToSubmit, {
+               await axios.post('https://hospital-management-server-g7db.onrender.com/DepartmentHead/adddepartmenthead', formDataToSubmit, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }

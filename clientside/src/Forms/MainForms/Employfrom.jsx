@@ -21,7 +21,7 @@ const EmployeeForm = ({ setActive }) => {
     useEffect(() => {
         const fetchDepartments = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/Department/departments');
+                const response = await axios.get('https://hospital-management-server-g7db.onrender.com/Department/departments');
                 setDepartments(response.data);
                 if (response.data.length > 0) {
                     setFormData(prevState => ({ ...prevState, department: response.data[0].id }));
@@ -33,7 +33,7 @@ const EmployeeForm = ({ setActive }) => {
 
         const fetchReports = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/DepartmentHead/departmentheads');
+                const response = await axios.get('https://hospital-management-server-g7db.onrender.com0/DepartmentHead/departmentheads');
                 setReports(response.data);
                 if (response.data.length > 0) {
                     setFormData(prevState => ({ ...prevState, report: response.data[0].id }));
@@ -50,7 +50,7 @@ const EmployeeForm = ({ setActive }) => {
     useEffect(() => {
         const fetchReportForDepartment = async () => {
             try {
-                const res = await axios.get('http://localhost:8000/DepartmentHead/departmentheads');
+                const res = await axios.get('https://hospital-management-server-g7db.onrender.com/DepartmentHead/departmentheads');
                 const data = res.data;
                 const repo = data.find(rep => rep.department === formData.department);
                 if (repo) {
@@ -106,7 +106,7 @@ const EmployeeForm = ({ setActive }) => {
             formDataToSubmit.append('description', formData.description);
 
             try {
-                await axios.post('http://localhost:8000/Employ/addemploy', formDataToSubmit, {
+                await axios.post('https://hospital-management-server-g7db.onrender.com/Employ/addemploy', formDataToSubmit, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }

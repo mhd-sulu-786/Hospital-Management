@@ -24,7 +24,7 @@ const SingleCard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:8000/Employ/employ/${id}`);
+        const res = await axios.get(`https://hospital-management-server-g7db.onrender.com/Employ/employ/${id}`);
         setData(res.data);
       } catch (err) {
         console.log(err);
@@ -38,8 +38,8 @@ const SingleCard = () => {
     const fetchLinks = async () => {
       try {
         const [res, res2] = await Promise.all([
-          axios.get('http://localhost:8000/Department/departments'),
-          axios.get('http://localhost:8000/DepartmentHead/departmentheads')
+          axios.get('https://hospital-management-server-g7db.onrender.com/Department/departments'),
+          axios.get('https://hospital-management-server-g7db.onrender.com/DepartmentHead/departmentheads')
         ]);
 
         const departments = res.data;
@@ -68,7 +68,7 @@ const SingleCard = () => {
   }, [data.department, data.report]);
 
   const deleteEmploy = (id) => {
-    axios.delete(`http://localhost:8000/Employ/deleteemploy/${id}`)
+    axios.delete(`https://hospital-management-server-g7db.onrender.com/Employ/deleteemploy/${id}`)
       .then(() => {
         console.log("Deleted");
         swal("Deleted!", "Data deleted!", "success");
@@ -84,7 +84,7 @@ const SingleCard = () => {
       <Button className='col-sm-1'  onClick={() => navigate('/')}> <Home />  Home</Button>
       <Container  className="mb-4 d-flex flex-column justfy-content-center align-items-center hover-card">
       <Card className="h-100 bg-white p-2 border border-2  border-secondary">
-        <Card.Img variant="top" src={`http://localhost:8000/Image/${data.image}`} alt={data.name} className="card-img-top-fixed" />
+        <Card.Img variant="top" src={`https://hospital-management-server-g7db.onrender.com/Image/${data.image}`} alt={data.name} className="card-img-top-fixed" />
         <Card.Body className="d-flex flex-column">
           <Card.Title className="text-truncate" style={{fontFamily:'initial'}}>{data.name}</Card.Title>
           <Card.Text className="text-truncate"style={{fontFamily:'initial'}}>Age: {data.age}</Card.Text>
