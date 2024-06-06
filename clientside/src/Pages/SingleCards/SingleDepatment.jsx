@@ -20,7 +20,7 @@ const SingleDepartment = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`https://hospital-management-server-g7db.onrender.com/Department/department/${id}`);
+        const res = await axios.get(`http://localhost:8000/Department/department/${id}`);
         setData(res.data);
       } catch (err) {
         console.log(err);
@@ -31,7 +31,7 @@ const SingleDepartment = () => {
   }, [id]);
 
   const deleteDepartment = (id) => {
-    axios.delete(`https://hospital-management-server-g7db.onrender.com/Department/deletedepartments/${id}`)
+    axios.delete(`http://localhost:8000/Department/deletedepartments/${id}`)
       .then(() => {
         console.log("Deleted");
         swal("Deleted!", "Data deleted!", "success");
@@ -47,7 +47,7 @@ const SingleDepartment = () => {
       <Button className='col-sm-1' onClick={() => navigate('/')}><Home/>Home</Button>
       <Container  className="borderborder-2 border-secondary d-flex flex-column justify-content-center align-items-center hover-card ">
       <Card className="h-100  p-2 bg-white.smoke " style={{fontFamily:'initial'}}>
-        <Card.Img variant="top" src={`https://hospital-management-server-g7db.onrender.com/Image/${data.image}`} alt={data.name} className="card-img-top-fixed" />
+        <Card.Img variant="top" src={`http://localhost:8000/Image/${data.image}`} alt={data.name} className="card-img-top-fixed" />
         <Card.Body className="d-flex flex-column">
           <Card.Title>{data.name}</Card.Title>
           <Card.Text className="text-primary">Year: {data.year}</Card.Text>

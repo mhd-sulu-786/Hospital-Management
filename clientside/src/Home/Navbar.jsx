@@ -40,7 +40,7 @@ function Navbar({ setActive }) {
   };
 
   return (
-    <AppBar className="bg-primary " position="sticky">
+    <AppBar style={{backgroundColor:'skyblue'}} position="sticky">
       <Container maxWidth="xl" >
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1,color:'black' }} />

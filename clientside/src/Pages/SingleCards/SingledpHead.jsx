@@ -22,7 +22,7 @@ const SingledpHead = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`https://hospital-management-server-g7db.onrender.com/DepartmentHead/departmenthead/${id}`);
+        const res = await axios.get(`http://localhost:8000/DepartmentHead/departmenthead/${id}`);
         setData(res.data);
       } catch (err) {
         console.error('Error fetching department head:', err);
@@ -36,7 +36,7 @@ const SingledpHead = () => {
   useEffect(() => {
     const fetchDepartment = async () => {
       try {
-        const res = await axios.get('https://hospital-management-server-g7db.onrender.com/Department/departments');
+        const res = await axios.get('http://localhost:8000/Department/departments');
         const departments = res.data;
         const department = departments.find(dept => dept.name === data.department);
 
@@ -56,7 +56,7 @@ const SingledpHead = () => {
   }, [data.department]);
 
   const deleteDepartmentHead = (id) => {
-    axios.delete(`https://hospital-management-server-g7db.onrender.com/DepartmentHead/deletedepartmenthead/${id}`)
+    axios.delete(`http://localhost:8000/DepartmentHead/deletedepartmenthead/${id}`)
       .then(() => {
         console.log("Deleted");
         swal("Deleted!", "Data deleted!", "success");
@@ -72,7 +72,7 @@ const SingledpHead = () => {
       <Button className='' onClick={() => navigate('/')}><Home/>Home</Button>
       <Container className="mb-4 d-flex flex-column justify-content-center align-items-center hover-card">
       <Card className="h-100 bg-info p-2 border border-2 border-secondary" style={{fontFamily:'initial'}}>
-        <Card.Img variant="top" src={`https://hospital-management-server-g7db.onrender.com/Image/${data.image}`} style={{borderRadius:'5px'}} alt={data.name} className="card-img-top-fixed w-100 m-0 p-0" />
+        <Card.Img variant="top" src={`http://localhost:8000/Image/${data.image}`} style={{borderRadius:'5px'}} alt={data.name} className="card-img-top-fixed w-100 m-0 p-0" />
         <Card.Body className="d-flex flex-column">
           <Card.Title className="text-truncate">{data.name}</Card.Title>
           <Card.Text className="text-muted">Age: {data.age}</Card.Text>

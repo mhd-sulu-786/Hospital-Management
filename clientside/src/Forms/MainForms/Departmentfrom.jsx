@@ -45,7 +45,7 @@ const DepartmentForm = ({setActive}) => {
             formDataToSubmit.append('description', formData.description);
 
             try {
-                await axios.post('https://hospital-management-server-g7db.onrender.com/Department/adddepartment', formDataToSubmit, {
+                await axios.post('http://localhost:8000/Department/adddepartment', formDataToSubmit, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }

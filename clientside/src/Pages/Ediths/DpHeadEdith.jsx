@@ -18,7 +18,7 @@ const DepartmentHeadEdit = () => {
     useEffect(() => {
         const fetchDepartmentHead = async () => {
             try {
-                const res = await axios.get(`https://hospital-management-server-g7db.onrender.com/DepartmentHead/departmenthead/${id}`);
+                const res = await axios.get(`http://localhost:8000/DepartmentHead/departmenthead/${id}`);
                 const departmentHead = res.data;
                 setFormData({
                     name: departmentHead.name,
@@ -42,7 +42,7 @@ const DepartmentHeadEdit = () => {
     useEffect(() => {
         const fetchDepartments = async () => {
             try {
-                const response = await axios.get('https://hospital-management-server-g7db.onrender.com/Department/departments');
+                const response = await axios.get('http://localhost:8000/Department/departments');
                 setDepartments(response.data);
             } catch (error) {
                 console.error('Error fetching departments:', error);
@@ -89,7 +89,7 @@ const DepartmentHeadEdit = () => {
             formDataToSubmit.append('description', formData.description);
 
             try {
-                await axios.put(`https://hospital-management-server-g7db.onrender.com/DepartmentHead/updatedepartmenthead/${id}`, formDataToSubmit, {
+                await axios.put(`http://localhost:8000/DepartmentHead/updatedepartmenthead/${id}`, formDataToSubmit, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }

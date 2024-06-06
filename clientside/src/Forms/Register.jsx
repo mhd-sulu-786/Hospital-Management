@@ -24,7 +24,7 @@ function Register() {
         const formErrors = validateForm();
         if (Object.keys(formErrors).length === 0) {
             try {
-                 await axios.post('https://hospital-management-server-g7db.onrender.com/register', { name, email, password });
+                 await axios.post('http://localhost:8000/register', { name, email, password });
                  swal('success','Successfuly Registered','success');
                 setName('');
                 setEmail('');

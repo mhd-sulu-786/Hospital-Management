@@ -25,7 +25,7 @@ function Login() {
         if (Object.keys(formErrors).length === 0) {
             try {
                 // Make API call to login endpoint
-                const res = await axios.post('https://hospital-management-server-g7db.onrender.com/login', { email, password });
+                const res = await axios.post('http://localhost:8000/login', { email, password });
                 
                 swal('Success','Login success','success');
                 setEmail('');

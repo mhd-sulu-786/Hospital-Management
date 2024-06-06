@@ -10,7 +10,7 @@ const CardEmploy = ({ _id, name, email, age, department, report, description, im
   const navigate = useNavigate();
 
   const DeleteEmploy = (id) => {
-    axios.delete(`https://hospital-management-server-g7db.onrender.com/Employ/deleteemploy/${id}`)
+    axios.delete(`http://localhost:8000/Employ/deleteemploy/${id}`)
       .then(() => {
         console.log("Deleted");
         swal("Deleted!", "Data deleted!", "success");
@@ -25,8 +25,8 @@ const CardEmploy = ({ _id, name, email, age, department, report, description, im
     const fetchLinks = async () => {
       try {
         const [res, res2] = await Promise.all([
-          axios.get('https://hospital-management-server-g7db.onrender.com/Department/departments'),
-          axios.get('https://hospital-management-server-g7db.onrender.com/DepartmentHead/departmentheads')
+          axios.get('http://localhost:8000/Department/departments'),
+          axios.get('http://localhost:8000/DepartmentHead/departmentheads')
         ]);
         
         const departments = res.data;
@@ -55,7 +55,7 @@ const CardEmploy = ({ _id, name, email, age, department, report, description, im
   return (
     <Col onClick={() => navigate(`/SingleEmploy/${_id}`)}  key={_id} md={4} sm={6} xs={12} xl={2} className="mb-4 hover-card">
       <Card  className="h-100 w-100 p-2" style={{background:'darkblue',color:'whitesmoke'}}>
-        <Card.Img variant="top" src={`https://hospital-management-server-g7db.onrender.com/Image/${image}`} style={{borderRadius:'10px',fontFamily:'monospace'}} alt={name} className="card-img-top-fixed" />
+        <Card.Img variant="top" src={`http://localhost:8000/Image/${image}`} style={{borderRadius:'10px',fontFamily:'monospace'}} alt={name} className="card-img-top-fixed" />
         <Card.Body className="d-flex flex-column">
           <Card.Title className="text-truncate" style={{fontFamily:'initial'}}>{name}</Card.Title>
           <Card.Text className="text-truncate"  style={{fontFamily:'initial'}}>Age: {age}</Card.Text>

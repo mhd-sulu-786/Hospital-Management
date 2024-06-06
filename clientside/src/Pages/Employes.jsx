@@ -10,7 +10,7 @@ const Employes = ({setActive}) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('https://hospital-management-server-g7db.onrender.com/Employ/employs')
+    axios.get('http://localhost:8000/Employ/employs')
       .then((res) => {
         setemploy(res.data);
         setLoading(false);
