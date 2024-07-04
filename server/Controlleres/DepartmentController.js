@@ -1,4 +1,4 @@
-const DepartmentModel = require('../DB_Models/Department');
+const DepartmentModel = require('../DB_MOdels/Department');
 const multer = require('multer');
 const path = require('path');
 
