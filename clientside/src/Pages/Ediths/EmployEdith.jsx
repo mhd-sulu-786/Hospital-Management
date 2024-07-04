@@ -21,7 +21,7 @@ const EmployEdith = () => {
     const [reports, setReports] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/Employ/employ/${id}`)
+        axios.get(`https://hospital-management-server-g7db.onrender.com/Employ/employ/${id}`)
             .then((res) => {
                 const employ = res.data;
                 setFormData({
@@ -47,7 +47,7 @@ const EmployEdith = () => {
         // Fetch departments and reports data from the API
         const fetchDepartments = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/Department/departments');
+                const response = await axios.get('https://hospital-management-server-g7db.onrender.com/Department/departments');
                 setDepartments(response.data);
                 if (response.data.length > 0) {
                     setFormData(prevState => ({ ...prevState, department: response.data[0].id }));
@@ -59,7 +59,7 @@ const EmployEdith = () => {
 
         const fetchReports = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/DepartmentHead/departmentheads');
+                const response = await axios.get('https://hospital-management-server-g7db.onrender.com/DepartmentHead/departmentheads');
                 setReports(response.data);
                 if (response.data.length > 0) {
                     setFormData(prevState => ({ ...prevState, report: response.data[0].id }));
@@ -113,7 +113,7 @@ const EmployEdith = () => {
             formDataToSubmit.append('description', formData.description);
 
             try {
-                await axios.put(`http://localhost:8000/Employ/updateemploy/${id}`, formDataToSubmit, {
+                await axios.put(`https://hospital-management-server-g7db.onrender.com/Employ/updateemploy/${id}`, formDataToSubmit, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }

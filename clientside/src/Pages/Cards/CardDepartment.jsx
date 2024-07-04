@@ -8,7 +8,7 @@ const CardDepartment = ({ _id, name, year, image, description,setActive }) => {
 const navigate =useNavigate();
   const deleteDepartment = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/Department/deletedepartments/${id}`);
+      await axios.delete(`https://hospital-management-server-g7db.onrender.com/Department/deletedepartments/${id}`);
       console.log("deleted");
       swal("Deleted!", "Data deleted!", "success");
       setActive('Home');
@@ -24,7 +24,7 @@ const navigate =useNavigate();
         <Card.Img
         style={{borderRadius:'10px'}}
           variant="top"
-          src={`http://localhost:8000/Image/${image}`}
+          src={`https://hospital-management-server-g7db.onrender.com/Image/${image}`}
           alt={name}
           className="card-img-top-fixed"
           onError={(e) => { e.target.onerror = null; e.target.src = "fallback-image-url.jpg"; }} // Fallback image

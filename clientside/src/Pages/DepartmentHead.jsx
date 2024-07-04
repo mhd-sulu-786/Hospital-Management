@@ -10,7 +10,7 @@ const DepartmentHeads = ({setActive}) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/DepartmentHead/departmentheads')
+    axios.get('https://hospital-management-server-g7db.onrender.com/DepartmentHead/departmentheads')
       .then((res) => {
         setDepartmentHeads(res.data);
         setLoading(false);

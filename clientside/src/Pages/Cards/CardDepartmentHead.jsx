@@ -12,7 +12,7 @@ const [departmentLink,setDepartment]=useState('');
   const DeleteDepartmentHead = (id) => {
     try {
 
-      axios.delete(`http://localhost:8000/DepartmentHead/deletedepartmenthead/${id}`)
+      axios.delete(`https://hospital-management-server-g7db.onrender.com/DepartmentHead/deletedepartmenthead/${id}`)
         .then(() => {
           
           swal("Deleted!", "Data deleted!", "success");
@@ -32,7 +32,7 @@ const [departmentLink,setDepartment]=useState('');
   useEffect(() => {
     const fetchDepartment = async () => {
       try {
-        const res = await axios.get('http://localhost:8000/Department/departments');
+        const res = await axios.get('https://hospital-management-server-g7db.onrender.com/Department/departments');
         const departments = res.data;
 
         const depart = departments.find(dept => dept.name === department);
@@ -52,7 +52,7 @@ const [departmentLink,setDepartment]=useState('');
   return (
     <Col onClick={()=>navigate(`/SingledpHead/${_id}`)} key={_id} md={3} sm={6} xs={12} xl={2} className="mb-4 hover-card">
       <Card className="h-100 p-2 bg-dark border border-2 border-secondary text-info p-2"  style={{fontFamily:'initial'}}>
-        <Card.Img variant="top" src={`http://localhost:8000/Image/${image}`} style={{borderRadius:'10px'}} alt={name} className="card-img-top-fixed" />
+        <Card.Img variant="top" src={`https://hospital-management-server-g7db.onrender.com/Image/${image}`} style={{borderRadius:'10px'}} alt={name} className="card-img-top-fixed" />
         <Card.Body className="d-flex flex-column">
           <Card.Title className="text-truncate">{name}</Card.Title>
           <Card.Text className="text-info txt-muted">Age: {age}</Card.Text>

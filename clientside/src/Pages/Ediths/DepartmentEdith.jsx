@@ -16,7 +16,7 @@ const DepartmentEdit = () => {
     useEffect(() => {
         const fetchDepartment = async () => {
             try {
-                const res = await axios.get(`http://localhost:8000/Department/department/${id}`);
+                const res = await axios.get(`https://hospital-management-server-g7db.onrender.com/Department/department/${id}`);
                 const department = res.data;
                 setFormData({
                     name: department.name,
@@ -67,7 +67,7 @@ const DepartmentEdit = () => {
             formDataToSubmit.append('description', formData.description);
 
             try {
-                const response = await axios.put(`http://localhost:8000/Department/updatedepartment/${id}`, formDataToSubmit, {
+                const response = await axios.put(`https://hospital-management-server-g7db.onrender.com/Department/updatedepartment/${id}`, formDataToSubmit, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
