@@ -9,7 +9,6 @@ const Admin_model = require('./DB_MOdels/Admin_model');
 const bodyParser = require('body-parser');
 const app = express();
 const PORT = 8000;
-
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
@@ -18,7 +17,7 @@ app.use('/Department', Departmentrouter);
 app.use('/DepartmentHead', DepartmentHeadrouter);
 app.use(express.static('Public'));
 
-mongoose.connect("mongodb://localhost:27017/HospitalMange")
+mongoose.connect("mongodb+srv://muhammadsulaimant367:AyLKqsaqoUs1hh6L@cluster0.thm6vij.mongodb.net/HospitalAdmin")
     .then(() => {
         console.log("Database Connected");
     })
